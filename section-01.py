@@ -76,3 +76,23 @@ print(B())
 
 # In the above example, it wouldn’t even make sense to return anything from __init__ method
 # since it’s purpose is just to alter the fresh state of the newly created instance.
+
+
+
+
+# Example 04
+# In the below example we see what happens when we return object from other class
+class A():
+    def __str__(self):
+        return "A object"
+
+class B():
+    def __new__(cls):
+        return A()
+
+    def __init__(self):
+        print("Inside init")
+
+print(B())
+# Output will be:
+#   A object
