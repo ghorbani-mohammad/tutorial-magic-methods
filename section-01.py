@@ -73,3 +73,6 @@ print(B())
 #   Initializing instance
 #   B()
 #   TypeError: __init__() should return None, not 'str'
+
+# In the above example, it wouldn’t even make sense to return anything from __init__ method
+# since it’s purpose is just to alter the fresh state of the newly created instance.
