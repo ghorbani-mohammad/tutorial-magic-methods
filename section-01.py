@@ -12,7 +12,7 @@
 
 
 # Example 01
-class A():
+class A:
     def __new__(cls):
         print("Creating instance")
         return super(A, cls).__new__(cls)
@@ -20,25 +20,25 @@ class A():
     def __init__(self):
         print("Init is called")
 
+
 A()
 # Output will be:
 #   Creating instance
 #   is called
 
 
-
-
 # Below example shows that if the super is omitted for __new__ method the __init__ method will not be executed.
 # Let’s see if that is the case.
 
 # Example 02
-class A():
+class A:
     def __new__(cls):
         print("Creating instance")
 
     # It is not called
     def __init__(self):
         print("Init is called")
+
 
 A()
 # Output will be:
@@ -48,22 +48,21 @@ A()
 # because the constructor is not returning anything
 
 
-
-
-
 # Example 03
 # Below example shows what happens if both the __new__ and __init__ methods are returning something
-class A():
+class A:
     # new method returning a string
     def __new__(cls):
         print("Creating instance")
         return "magic methods"
 
-class B():
+
+class B:
     # init method returning a string
     def __init__(self):
         print("Initializing instance")
         return "magic methods"
+
 
 print(A())
 print(B())
@@ -78,23 +77,23 @@ print(B())
 # since it’s purpose is just to alter the fresh state of the newly created instance.
 
 
-
-
 # Example 04
 # In the below example we see what happens when we return object from other class
-class A():
+class A:
     def __str__(self):
         return "A object"
 
-class B():
+
+class B:
     def __new__(cls):
         return A()
 
     def __init__(self):
         print("Inside init")
 
+
 print(B())
 # Output will be:
 #   A object
 
-# As output shows, __init__ function of the B class isn't called !!! 
+# As output shows, __init__ function of the B class isn't called !!!
