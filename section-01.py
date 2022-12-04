@@ -46,3 +46,30 @@ A()
 
 # In the above example, it can be seen that __init__ method is not called
 # because the constructor is not returning anything
+
+
+
+
+
+# Example 03
+# Below example shows what happens if both the __new__ and __init__ methods are returning something
+class A():
+    # new method returning a string
+    def __new__(cls):
+        print("Creating instance")
+        return "magic methods"
+
+class B():
+    # init method returning a string
+    def __init__(self):
+        print("Initializing instance")
+        return "magic methods"
+
+print(A())
+print(B())
+# Output will be:
+#   Creating instance
+#   magic methods
+#   Initializing instance
+#   B()
+#   TypeError: __init__() should return None, not 'str'
