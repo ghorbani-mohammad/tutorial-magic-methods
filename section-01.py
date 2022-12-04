@@ -24,3 +24,23 @@ A()
 # Output will be:
 #   Creating instance
 #   is called
+
+
+
+
+# Below example shows that if the super is omitted for __new__ method the __init__ method will not be executed.
+# Let’s see if that is the case.
+
+# Example 02
+class A():
+    def __new__(cls):
+        print("Creating instance")
+
+    # It is not called
+    def __init__(self):
+        print("Init is called")
+
+A()
+
+# In the above example, it can be seen that __init__ method is not called
+# because the constructor is not returning anything
