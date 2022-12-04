@@ -96,3 +96,5 @@ class B():
 print(B())
 # Output will be:
 #   A object
+
+# As output shows, __init__ function of the B class isn't called !!! 
