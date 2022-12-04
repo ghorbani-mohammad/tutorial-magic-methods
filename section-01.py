@@ -1,0 +1,1 @@
+# In this section we're going over __new__ function
