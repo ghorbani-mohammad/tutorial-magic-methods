@@ -9,3 +9,15 @@
 # If both __init__ method and __new__ method exists in the class, then the __new__ method is executed first and decides
 # whether to use __init__ method or not, because other class constructors can be called by __new__ method or it can simply
 # return other objects as an instance of this class.
+
+
+# Example 01
+class A():
+    def __new__(cls):
+        print("Creating instance")
+        return super(A, cls).__new__(cls)
+
+    def __init__(self):
+        print("Init is called")
+
+A()
