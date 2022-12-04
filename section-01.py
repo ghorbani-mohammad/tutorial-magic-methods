@@ -21,3 +21,6 @@ class A():
         print("Init is called")
 
 A()
+# Output will be:
+#   Creating instance
+#   is called
