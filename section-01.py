@@ -41,6 +41,8 @@ class A():
         print("Init is called")
 
 A()
+# Output will be:
+#   Creating instance
 
 # In the above example, it can be seen that __init__ method is not called
 # because the constructor is not returning anything
