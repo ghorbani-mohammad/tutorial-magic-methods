@@ -5,3 +5,7 @@
 # So in a nutshell:
 # __new__ -> for creating object
 # __init__ -> for initialize object (setting values)
+
+# If both __init__ method and __new__ method exists in the class, then the __new__ method is executed first and decides
+# whether to use __init__ method or not, because other class constructors can be called by __new__ method or it can simply
+# return other objects as an instance of this class.
